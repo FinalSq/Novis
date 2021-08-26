@@ -75,3 +75,15 @@ main>.container {
     bottom: 0;
     width: 100%;
 }
+
+.opacity{
+    background-color: #ffb9bb;
+}
+
+.borderLRed{
+    border-color: rgb(228, 151, 151) !important;
+}
+
+.darkRed {
+    color: rgba(136, 7, 7, 0.712);
+}
