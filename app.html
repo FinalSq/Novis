@@ -60,6 +60,7 @@
     <main class="flex-shrink-0">
         <div class="container">
             <div class="row row-cols-1 row-cols-md-2 mt-5">
+                <!-- Left Column -->
                 <div class="col">
                     <div>
                         <h1><strong>NOVIS!: A Coding Project</strong></h1>
@@ -68,26 +69,42 @@
                         </p>
                     </div>
                 </div>
+                <!-- Right Column -->
                 <div class="col">
                     <!-- String Input and Button -->
                     <div>
-                        <h4 class="border-bottom border-3 border-danger"><strong>Enter a String to be reversed</strong>
+                        <h4 class="border-bottom border-3 border-danger"><strong>Enter a String to be Reversed</strong>
                         </h4>
                     </div>
-                    <form>
-                        <div class="mt-3">
+                    <form class="row row-cols-1">
+                        <div class="col">
                             <input id="userString" type="text" class="form-control" placeholder="Enter A String"
                                 aria-label="String Input">
                         </div>
-                        <div>
-                            <button id="submitBtn" type="button" class="btn btn-danger mt-2">Reverse Me</button>
+                        <div class="col d-flex justify-content-center">
+                            <div class="me-2">
+                                <button id="submitBtn" type="button" class="btn btn-danger mt-2">Reverse Me</button>
+                            </div>
+                            <div>
+                                <button id="clearBtn" type="button" class="btn btn-dark mt-2">Clear Reversed String</button>
+                            </div>
                         </div>
+                        <!-- Section that reveals when button is pressed -->
+                        <div id="reveal" class="alert alert-danger mt-5 invisible">
+                            <div class="border-bottom border-2 borderLRed">
+                                <h1 class="darkRed"><strong>Well done!</strong></h1>
+                            </div>
+                            <div>
+                                <p id="msg" class="mt-3">
+                                    <!-- Insert a Message Here-->
+                                </p>
+                            </div>
+                        </div>
+                        <!-- This Ends the reveal section -->
                     </form>
-                    <!-- Section that reveals when button is pressed -->
-                    <div id="reveal">
-                            <!-- Revealed Content Goes Here -->
-                    </div>
-                    <!-- This Ends the reveal section -->
+
+
+
                 </div>
             </div>
         </div>
@@ -130,7 +147,8 @@
     <!-- Link to External JS -->
     <script src="/js/site.js"></script>
     <script>
-        document.getElementById("submitBtn").addEventListener("click", operationReverse)
+        document.getElementById("submitBtn").addEventListener("click", operationReverse);
+        document.getElementById("clearBtn").addEventListener("click", clearContent);
     </script>
 </body>
 

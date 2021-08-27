@@ -66,17 +66,105 @@
                 <div class="col col-md-8">
                     <pre class="line-numbers">
                         <code class="language-javascript">
-                            ///Call Hello World
-                            function HelloWorld(){
-                                alert("Hello World!");
+                            // On button push, runs logic to reverse the string
+                            function operationReverse() {
+                            
+                                // Makes reveal section invisible when this program starts
+                                document.getElementById("reveal").classList.add("invisible");
+                            
+                                // Runs the functions needed to perform the logic for the program
+                                let userString = getString();
+                                let reversedString = reverseString(userString);
+                            
+                                revealOnDisplay(reversedString);
+                                                                    
+                            }
+                            
+                            // Get the string from the input and return the string
+                            function getString() {
+                            
+                                let userString = document.getElementById("userString").value;
+                                return userString;
+                            }
+                            
+                            // Reverse the string and return the reversed string
+                            function reverseString(userString) {
+                            
+                                // Creates a variable with type array
+                                let reversedString = [];
+                            
+                                // Iterates backwards through the array "stringToBeReversed" and concatenates it with reversedString
+                                for (let index = userString.length - 1; index >= 0; index--) {
+                                    reversedString += userString[index];
+                                }
+                            
+                                return reversedString;
+                            }
+                            
+                            // Reveal the reversed string on display
+                            function revealOnDisplay(reversedString) {
+                                
+                                // Adds a string to a &ltp> tag in the ID #reveal
+                                let message = document.getElementById("msg");
+                                message.innerHTML = `Your string reversed is: ${reversedString}`;
+                            
+                                // Removes the "invisible" class and reveals the content in ID #reveal
+                                document.getElementById("reveal").classList.remove("invisible");
+                            }
+                            
+                            // Clears content created by revealOnDisplay() and empties the user input box
+                            function clearContent(){
+                            
+                                let userString = document.getElementById("userString");
+                                userString.value = "";
+                            
+                                document.getElementById("reveal").classList.add("invisible");
                             }
                         </code>
                     </pre>
                 </div>
                 <div class="col col-md-4">
-                    <p>The Code is structured in one function.</p>
-                    <h5>Hello World</h5>
-                    <p>Hello World is a function that displays an alert with a amessage of "Hello World!"</p>
+                    <h3>Function operationReverse()</h3>
+                    <p>
+                        <strong>operationReverse()</strong> is the main function of this
+                        program. This function is responsible for ensuring the content to be revealed is
+                        indeed hidden, and calls all of the functions necessary to run the logic of our 
+                        program. <strong>operationReverse()</strong> adds the class <strong>invisible</strong>
+                        to the html tag with the ID of #reveal. Next, 
+                        <strong>getString()</strong> is called to get the users input,
+                        <strong>reverseString()</strong> is called to reverse the users input, and
+                        <strong>revealOnDisplay()</strong> is called to reveal the reversed string on the display.
+                    </p>
+                    <h3>Function getString()</h3>
+                    <p>
+                        Grabs the user input from the input box and stores it into a variable 
+                        <strong>userString</strong>, which is returned by the function.
+                    </p>
+                    <h3>Function reverseString()</h3>
+                    <p>
+                        <strong>reverseString()</strong>
+                        iterates through an array backwards and adds each item 
+                        into a the variable
+                        <strong>reversedString</strong> 
+                        starting from the last indicie, to the first. In other
+                        words, the array is reversed and stored in the
+                        <strong>reversedString</strong>
+                        variable, then the function returns the array.
+                    </p>
+                    <h3>Function revealOnDisplay()</h3>
+                    <p>
+                        This function takes an argument and passes it into the html, then reveals
+                        it on screen.
+                    </p>
+                    <h3>Function clearContent()</h3>
+                    <p>
+                        <strong>clearContent()</strong>
+                        is a function that empties the value inside of the input box
+                        and adds the bootstrap class 
+                        <strong>invisible</strong>
+                        to hide the content revealed by 
+                        <strong>revealOnDisplay()</strong>.
+                    </p>
                 </div>
             </div>
         </div>
